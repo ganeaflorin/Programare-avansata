@@ -16,7 +16,7 @@ public class ValidateInput {
             int number = Integer.parseInt(input);
             if (number % 2 == 0) {
                 System.out.println("Input is not an odd integer.");
-                
+
             } else break;
         }
     }
