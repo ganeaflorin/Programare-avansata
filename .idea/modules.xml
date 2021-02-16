@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ProjectModuleManager">
+    <modules>
+      <module fileurl="file://$PROJECT_DIR$/L1 - Compulsory/L1 - Compulsory.iml" filepath="$PROJECT_DIR$/L1 - Compulsory/L1 - Compulsory.iml" />
+      <module fileurl="file://$PROJECT_DIR$/L1 - Optional/L1 - Optional.iml" filepath="$PROJECT_DIR$/L1 - Optional/L1 - Optional.iml" />
+      <module fileurl="file://$PROJECT_DIR$/Laborator1/L1- Compulsory.iml" filepath="$PROJECT_DIR$/Laborator1/L1- Compulsory.iml" />
+      <module fileurl="file://$PROJECT_DIR$/Laborator1/L1- comp.iml" filepath="$PROJECT_DIR$/Laborator1/L1- comp.iml" />
+      <module fileurl="file://$PROJECT_DIR$/Laborator1/Laborator1.iml" filepath="$PROJECT_DIR$/Laborator1/Laborator1.iml" />
+    </modules>
+  </component>
+</project>
