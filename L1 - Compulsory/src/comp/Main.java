@@ -1,3 +1,5 @@
+package comp;
+
 public class Main {
 
 

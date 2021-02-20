@@ -1,3 +1,5 @@
+package comp;
+
 public class Compute {
     //generam un numar aleatoriu
     //il inmultim cu 3, convertim 10101 din binar si FF din hex si le adaugam numarului

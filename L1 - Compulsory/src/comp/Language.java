@@ -1,3 +1,5 @@
+package comp;
+
 public class Language {
     final private String[] languages = {"C", "C++", "C#", "Python", "Go", "Rust", "JavaScript", "PHP", "Swift", "Java"};
 
