@@ -11,7 +11,7 @@ public class Main {
 
         d1.setDemand(20);
         d1.setName("d1");
-        d2.setDemand(20);
+        d2.setDemand(25);
         d2.setName("d2");
         d3.setDemand(25);
         d3.setName("d3");
@@ -26,11 +26,13 @@ public class Main {
         s3.setName("s3");
         s3.setType("WAREHOUSE");
 
-        System.out.println(d1.toString()+d2.toString()+d3.toString()+s1.toString()+s2.toString()+s3.toString());
+        System.out.println(d1.toString() + d2.toString() + d3.toString() + s1.toString() + s2.toString() + s3.toString());
 
-        Problem costs = new Problem(3, 3);
-        int [][]tempMatrix = {{2,3,1}, {5,4,8}, {5,6,8}};
+        Problem costs = new Problem(4, 4);
+        int[][] tempMatrix = {{2, 3, 1, s1.getSupply()}, {5, 4, 8, s2.getSupply()}, {5, 6, 8, s3.getSupply()}, {d1.getDemand(), d2.getDemand(), d3.getDemand(), -1}};
         costs.setMatrix(tempMatrix);
         costs.printCostMatrix();
+//        System.out.println(costs.toString());
     }
+
 }

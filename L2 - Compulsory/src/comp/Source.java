@@ -54,6 +54,6 @@ public class Source {
 
     @Override
     public String toString() {
-        return "name: " + this.name + " supply: " + this.supply + " type: " + this.type + "\n";
+        return "Source name: " + this.name + " supply: " + this.supply + " type: " + this.type + "\n";
     }
 }

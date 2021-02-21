@@ -26,6 +26,6 @@ public class Destination {
     }
     @Override
     public String toString() {
-        return "name: "+this.name+" demand: "+this.demand+"\n";
+        return "Destination name: "+this.name+" demand: "+this.demand+"\n";
     }
 }
