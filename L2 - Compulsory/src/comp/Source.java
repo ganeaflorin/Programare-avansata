@@ -9,6 +9,9 @@ public class Source {
         WAREHOUSE, FACTORY
     }
 
+    /**
+     * constructor pentru initializare
+     */
     public Source() {
         this.supply = 0;
         this.name = null;
@@ -31,8 +34,14 @@ public class Source {
         this.name = name;
     }
 
+    /**
+     * setter pentru supply
+     * daca supply-ul este pozitiv il setam
+     */
     public void setSupply(int supply) {
-        this.supply = supply;
+        if (supply >= 0) {
+            this.supply = supply;
+        }
     }
 
     /**
@@ -49,9 +58,12 @@ public class Source {
             }
         }
         if (!isInEnum)
-            System.out.println("Type \""+type+"\" "+"not found.");
+            System.out.println("Type \"" + type + "\" " + "not found.");
     }
 
+    /**
+     * suprascrierea metodei toString pentru a returna informatiile despre obiect
+     */
     @Override
     public String toString() {
         return "Source name: " + this.name + " supply: " + this.supply + " type: " + this.type + "\n";

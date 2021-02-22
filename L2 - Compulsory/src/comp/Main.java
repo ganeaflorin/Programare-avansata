@@ -2,13 +2,19 @@ package comp;
 
 public class Main {
     public static void main(String[] args) {
+        /**
+         * instantiere obiecte Destinatie, Sursa si Problem
+         */
         Destination d1 = new Destination();
         Destination d2 = new Destination();
         Destination d3 = new Destination();
         Source s1 = new Source();
         Source s2 = new Source();
         Source s3 = new Source();
-
+        Problem costs = new Problem(4, 4);
+        /**
+         * setarea parametrilor obiectelor
+         */
         d1.setDemand(20);
         d1.setName("d1");
         d2.setDemand(25);
@@ -28,7 +34,9 @@ public class Main {
 
         System.out.println(d1.toString() + d2.toString() + d3.toString() + s1.toString() + s2.toString() + s3.toString());
 
-        Problem costs = new Problem(4, 4);
+        /**
+         * creare matrice pentru setarea matricei de costuri
+         */
         int[][] tempMatrix = {{2, 3, 1, s1.getSupply()}, {5, 4, 8, s2.getSupply()}, {5, 6, 8, s3.getSupply()}, {d1.getDemand(), d2.getDemand(), d3.getDemand(), -1}};
         costs.setMatrix(tempMatrix);
         costs.printCostMatrix();

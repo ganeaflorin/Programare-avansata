@@ -13,18 +13,18 @@ public class Problem {
         this.m = m;
     }
 
+    /**
+     * copiaza in matricea costMatrix matricea data ca parametru
+     */
     public void setMatrix(int[][] matrix) {
         for (int i = 0; i < n; i++)
             for (int j = 0; j < m; j++)
                 costMatrix[i][j] = matrix[i][j];
     }
 
-    public int[][] getMatrix() {
-        return costMatrix;
-    }
 
     /**
-     * metoda printeaza matricea sub forma exemplului (cu demand si supply)
+     * metoda printeaza matricea sub forma exemplului (cu valorile pentru demand si pentru supply)
      */
     public void printCostMatrix() {
         System.out.println("Cost matrix:");
@@ -43,7 +43,9 @@ public class Problem {
             System.out.println();
         }
     }
-
+    /**
+     * suprascrierea metodei toString pentru a returna informatiile despre obiect
+     */
     @Override
     public String toString() {
         return "costMatrix=" + Arrays.toString(costMatrix) + ", n=" + n + ", m=" + m;

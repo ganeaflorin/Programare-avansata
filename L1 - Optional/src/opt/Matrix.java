@@ -5,15 +5,19 @@ import java.util.ArrayList;
 import java.util.Random;
 
 public class Matrix {
-    int[][] matrix;
-    int n;
+    private int[][] matrix;
+    private int[][] treeMatrix;
+    private int n;
+    private boolean isConnected;
 
     /**
      * constructor pentru initializarea matricei de n x n
      */
     Matrix(int n) {
+        treeMatrix = new int[n][n];
         matrix = new int[n][n];
         this.n = n;
+        isConnected = false;
     }
 
     /**
@@ -52,13 +56,15 @@ public class Matrix {
         visited[node] = true; //mark v as visited
         for (int i = 0; i < n; i++) {
             if (matrix[node][i] == 1 && !visited[i]) {
+                treeMatrix[i][node] = 1;
+                treeMatrix[node][i] = 1;
                 DFS(i, visited);
             }
         }
     }
 
     /**
-     * functia returneaza true daca avem drum intre oricare 2 noduri, false in caz contrar
+     * functia returneaza o lista cu stringuri ce reprezinta componentele conexe
      * parcurgem toate nodurile, iar la fiecare pas reinitializam visited cu false.
      * calculam visited si il parcurgem, daca nu am ajuns la un nod inseamna ca nu e conex si returnam
      * adaugam componentele conexe sub forma de stringuri intr-un array de stringuri
@@ -91,7 +97,7 @@ public class Matrix {
      * afisam daca este sau nu conex
      */
     void printConnectedComponents(ArrayList<String> list) {
-        boolean isConnected = false;
+
         ArrayList<String> tempList = new ArrayList<>();
         for (String i : list)
             if (!tempList.contains(i)) {
@@ -102,7 +108,27 @@ public class Matrix {
         for (String i : tempList)
             System.out.println(i);
         if (isConnected)
-            System.out.println("The graph is connected");
-        else System.out.println("The graph is not connected");
+            System.out.println("The graph is connected\n");
+        else System.out.println("The graph is not connected\n");
+    }
+
+
+    void partialTree(int node) {
+
+        boolean[] visited = new boolean[n];
+        DFS(node, visited);
+
+
+    }
+
+    void printTreeMatrix() {
+        if (isConnected) {
+            System.out.println("The partial tree of the graph:");
+            for (int i = 0; i < n; i++) {
+                for (int j = 0; j < n; j++)
+                    System.out.print(treeMatrix[i][j] + " ");
+                System.out.println();
+            }
+        } else System.out.println("The graph is not connected, partial tree cannot be generated.");
     }
 }

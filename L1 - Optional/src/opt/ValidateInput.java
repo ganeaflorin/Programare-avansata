@@ -2,9 +2,9 @@ package opt;
 
 public class ValidateInput {
     /**
-     *  convertim inputul intr-o valoare de tip integer daca este posibil
+     * convertim inputul intr-o valoare de tip integer daca este posibil
      */
-     int validateInput(String input) {
+    int validateInput(String input) {
 
 
         int n = Integer.parseInt(input);
