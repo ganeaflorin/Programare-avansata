@@ -2,7 +2,8 @@ package opt;
 
 public class Main {
     public static void main(String[] args) {
-
+        //TODO: adaugat comentarii (javadoc)
+        //TODO: facut solutia (?)
 
         /**
          * instantiere obiecte Destinatie, Sursa si Problem
