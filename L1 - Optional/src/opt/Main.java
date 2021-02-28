@@ -4,9 +4,9 @@ package opt;
 import java.util.ArrayList;
 
 public class Main {
-    public static void main (String[] args) {
+    public static void main(String[] args) {
         String input = args[0];
-//        String input = "10000";
+//        String input = "5";
         ValidateInput validator = new ValidateInput();
         int n = validator.validateInput(input);
         Matrix matrix = new Matrix(n);
@@ -21,6 +21,6 @@ public class Main {
 
 
         long t2 = System.nanoTime();
-        System.out.println("Execution time: "+ (t2-t1) +" nanoseconds.");
+        System.out.println("Execution time: " + (t2 - t1) + " nanoseconds.");
     }
 }

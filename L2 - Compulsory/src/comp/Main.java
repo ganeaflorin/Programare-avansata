@@ -11,7 +11,12 @@ public class Main {
         Source s1 = new Source();
         Source s2 = new Source();
         Source s3 = new Source();
-        Problem costs = new Problem(4, 4);
+        /**
+         * n = numarul de linii ale matricei
+         * m = nr de coloane
+         */
+        int n = 4, m = 4;
+        Problem costs = new Problem(n, m);
         /**
          * setarea parametrilor obiectelor
          */
