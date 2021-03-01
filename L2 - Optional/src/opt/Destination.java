@@ -5,7 +5,13 @@ public class Destination {
     private int demand;
 
     /**
-     * constructor pentru initializare
+     * constructor pentru obiecte de tip Destination
+     * daca nu exista duplicat, il adaugam in array-ul de destinatii
+     * altfel afisam un mesaj de atentionare
+     *
+     * @param demand  demand-ul cu care sa fie initializat
+     * @param name    name-ul cu care sa fie initializat
+     * @param problem o instanta a clasei Problem de care apartine obiectul
      */
     public Destination(int demand, String name, Problem problem) {
         this.demand = demand;
@@ -15,17 +21,24 @@ public class Destination {
         else System.out.println("Duplicate " + this.getName() + " was not added");
     }
 
+    /**
+     * @return name
+     */
     public String getName() {
         return name;
     }
 
+    /**
+     * @return demand
+     */
     public int getDemand() {
         return demand;
     }
 
     /**
-     * setter pentru demand
-     * daca demandul este pozitiv il setam
+     * seteaza demand daca e pozitiv
+     *
+     * @param demand demandul care sa fie setat
      */
     public void setDemand(int demand) {
 
@@ -33,19 +46,27 @@ public class Destination {
             this.demand = demand;
     }
 
-
+    /**
+     * seteaza numele
+     *
+     * @param name numele care sa fie setat
+     */
     public void setName(String name) {
         this.name = name;
     }
 
     /**
-     * suprascrierea metodei toString pentru a returna informatiile despre obiect
+     * @return string cu detaliile despre obiect
      */
     @Override
     public String toString() {
         return "Destination name: " + this.name + " demand: " + this.demand + "\n";
     }
 
+    /**
+     * @param destination obiect cu care este comparat
+     * @return true daca obiectele sunt de acelasi tip, au acelasi nume si acelasi demand, false in caz contrar
+     */
     @Override
     public boolean equals(Object destination) {
         if (destination == null) {
@@ -58,9 +79,6 @@ public class Destination {
         if (this.name != tempDestination.name) {
             return false;
         }
-        if (this.demand != tempDestination.demand) {
-            return false;
-        }
-        return true;
+        return this.demand == tempDestination.demand;
     }
 }

@@ -2,13 +2,10 @@ package opt;
 
 public class Main {
     public static void main(String[] args) {
-        //TODO: adaugat comentarii (javadoc)
-        //TODO: facut solutia (?)
-
         /**
          * instantiere obiecte Destinatie, Sursa si Problem
          */
-        int n = 4, m = 4;
+        int n = 3, m = 3;
         Problem problem = new Problem(n, m);
         Destination d1 = new Destination(20, "d1", problem);
         Destination d2 = new Destination(25, "d2", problem);
@@ -19,20 +16,24 @@ public class Main {
         Warehouse s2 = new Warehouse(35, "s2", problem);
         Warehouse s3 = new Warehouse(25, "s3", problem);
         Warehouse s4 = new Warehouse(25, "s3", problem);
-
+        /**
+         * printare sources si destinations
+         */
         problem.printSourceList();
         problem.printDestinationList();
-
-
         /**
          * creare matrice pentru setarea matricei de costuri
          */
-        int[][] tempMatrix = {{2, 3, 1, s1.getSupply()},
-                {5, 4, 8, s2.getSupply()},
-                {5, 6, 8, s3.getSupply()},
-                {d1.getDemand(), d2.getDemand(), d3.getDemand(), -1}};
+        int[][] tempMatrix = {{2, 3, 1},
+                {5, 4, 8},
+                {5, 6, 8}};
         problem.setMatrix(tempMatrix);
         problem.printCostMatrix();
+        /**
+         * instantiere solutie + apelare
+         */
+        Solution solution = new Solution(problem);
+        solution.solution();
 
     }
 

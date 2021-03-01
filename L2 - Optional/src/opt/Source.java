@@ -6,14 +6,25 @@ public abstract class Source {
     private String name;
     private int supply;
 
+    /**
+     * @return numele obiectului
+     */
     public String getName() {
         return name;
     }
 
+    /**
+     * @return supplyul obiectului
+     */
     public int getSupply() {
         return supply;
     }
 
+    /**
+     * seteaza name-ul
+     *
+     * @param name numele care sa fie setat
+     */
     public void setName(String name) {
         this.name = name;
     }
@@ -29,13 +40,17 @@ public abstract class Source {
     }
 
     /**
-     * suprascrierea metodei toString pentru a returna informatiile despre obiect
+     * @return string cu detaliile despre obiect
      */
     @Override
     public String toString() {
         return "Source name: " + this.name + " supply: " + this.supply + "\n";
     }
 
+    /**
+     * @param source obiect cu care este comparat
+     * @return true daca obiectele sunt de acelasi tip, au acelasi nume si acelasi demand, false in caz contrar
+     */
     @Override
     public boolean equals(Object source) {
         if (source == null) {
