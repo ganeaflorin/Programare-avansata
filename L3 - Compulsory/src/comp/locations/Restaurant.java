@@ -1,16 +1,21 @@
-package comp;
+package comp.locations;
+
+import comp.interfaces.Classifiable;
 
 public class Restaurant extends Location implements Classifiable {
-    /**
-     * daca rankul e valid, il setam, atlfel afisam un mesaj de avertizare
-     * adaugam locatia in lista
-     * @param name numele care sa fie setat
-     * @param rank rankul care sa fie setat
-     */
+    private int rank;
+
     public Restaurant(String name, int rank) {
         if (!this.setClassification(rank))
             System.out.println("Please insert rank between 0-5.");
         this.name = name;
         City.addLocation(this);
+    }
+
+    public boolean setClassification(int rank) {
+        if (rank < 0 || rank > 5)
+            return false;
+        this.rank = rank;
+        return true;
     }
 }

@@ -1,9 +1,12 @@
 package comp;
 
+/**
+ * Ganea Florin 2A5
+ */
 public class Main {
     public static void main(String[] args) {
         /**
-         * instantiere obiecte Destinatie, Sursa si Problem
+         * instantiere obiecte Destinatie, Sursa
          */
         Destination d1 = new Destination();
         Destination d2 = new Destination();
@@ -12,6 +15,7 @@ public class Main {
         Source s2 = new Source();
         Source s3 = new Source();
         /**
+         * instantiere obiect Problem
          * n = numarul de linii ale matricei
          * m = nr de coloane
          */
@@ -42,7 +46,10 @@ public class Main {
         /**
          * creare matrice pentru setarea matricei de costuri
          */
-        int[][] tempMatrix = {{2, 3, 1, s1.getSupply()}, {5, 4, 8, s2.getSupply()}, {5, 6, 8, s3.getSupply()}, {d1.getDemand(), d2.getDemand(), d3.getDemand(), -1}};
+        int[][] tempMatrix = {{2, 3, 1, s1.getSupply()},
+                {5, 4, 8, s2.getSupply()},
+                {5, 6, 8, s3.getSupply()},
+                {d1.getDemand(), d2.getDemand(), d3.getDemand(), -1}};
         costs.setMatrix(tempMatrix);
         costs.printCostMatrix();
 //        System.out.println(costs.toString());

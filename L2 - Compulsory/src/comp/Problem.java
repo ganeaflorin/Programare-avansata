@@ -43,6 +43,7 @@ public class Problem {
             System.out.println();
         }
     }
+
     /**
      * suprascrierea metodei toString pentru a returna informatiile despre obiect
      */
