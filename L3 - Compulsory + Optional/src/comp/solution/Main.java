@@ -1,5 +1,6 @@
 package comp.solution;
 
+import comp.interfaces.Visitable;
 import comp.locations.*;
 
 import java.time.LocalTime;
@@ -30,5 +31,11 @@ public class Main {
 //        oras.printLocations();
         oras.printMaps();
         oras.printVisitableNotPayable();
+
+        //default+static methods
+        Church v10 = new Church("Churchaa", LocalTime.of(8, 25), LocalTime.of(5, 5));
+        v10.setDefaultHours();
+        System.out.println(v10.getOpeningHour() + "  " + v10.getClosingHour());
+        System.out.println(Visitable.getVisitingDuration(v10));
     }
 }

@@ -8,4 +8,9 @@ import java.util.List;
 public class TravelPlan {
     private City city;
     private List<Location> preferences;
+
+    public TravelPlan(City city, List<Location> preferences) {
+        this.city = city;
+        this.preferences = preferences;
+    }
 }

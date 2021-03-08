@@ -19,7 +19,7 @@ public interface Visitable {
         setClosingHour(LocalTime.of(21, 0));
     }
 
-    static Duration getVisitingDuration(Location location) {
+    static Duration getVisitingDuration(Visitable location) {
         return Duration.between(location.getClosingHour(), location.getOpeningHour());
 
     }
