@@ -23,6 +23,8 @@ public class Main {
         Preferences preferences = new Preferences(studentList, schoolSet);
         preferences.createStdPrefMap();
         preferences.printStdPrefMap();
+        preferences.createSchoolPrefMap();
+        preferences.printSchoolPrefMap();
     }
 
 }
