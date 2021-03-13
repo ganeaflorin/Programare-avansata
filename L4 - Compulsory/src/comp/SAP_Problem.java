@@ -1,14 +1,15 @@
 package comp;
 
 import java.util.*;
+import java.util.stream.Collectors;
 
-public class Preferences {
-    private Map<Student, List<School>> studentPref;
-    private List<Student> students;
-    private Set<School> schools;
-    private Map<School, List<Student>> schoolPref;
+public class SAP_Problem {
+    private final Map<Student, List<School>> studentPref;
+    private final List<Student> students;
+    private final Set<School> schools;
+    private final Map<School, List<Student>> schoolPref;
 
-    public Preferences(List<Student> students, Set<School> schools) {
+    public SAP_Problem(List<Student> students, Set<School> schools) {
         studentPref = new HashMap<>();
         schoolPref = new TreeMap<>();
         this.schools = schools;
@@ -17,9 +18,13 @@ public class Preferences {
 
     public void createSchoolPrefMap() {
         List<School> tempList = setToList();
-        schoolPref.put(tempList.get(0), Arrays.asList(students.get(0), students.get(1), students.get(2), students.get(3)));
-        schoolPref.put(tempList.get(1), Arrays.asList(students.get(0), students.get(1), students.get(2)));
+        schoolPref.put(tempList.get(0), Arrays.asList(students.get(3), students.get(0), students.get(1), students.get(2)));
+        schoolPref.put(tempList.get(1), Arrays.asList(students.get(0), students.get(2), students.get(1)));
         schoolPref.put(tempList.get(2), Arrays.asList(students.get(0), students.get(1), students.get(3)));
+    }
+
+    public List<Student> getStudents() {
+        return students;
     }
 
     public void printSchoolPrefMap() {
@@ -48,7 +53,7 @@ public class Preferences {
         }
     }
 
-    private List setToList() {
+    public List setToList() {
         List<School> list = new ArrayList<>();
         Iterator<School> iterator = schools.iterator();
         while (iterator.hasNext()) {
@@ -57,4 +62,22 @@ public class Preferences {
         return list;
     }
 
+    public void studentsFindAcceptSchools(List<School> schoolList) {
+        List<Student> result = students.stream()
+                .filter(student -> studentPref.get(student).containsAll(schoolList))
+                .collect(Collectors.toList());
+        System.out.print("\nStudents who prefer H0, H1, H2: ");
+        for (Student std : result) {
+            System.out.print(std.getName() + " ");
+        }
+        System.out.println();
+    }
+
+    public void schoolsTopPriority(Student student) {
+        List<School> schoolList = setToList();
+        System.out.print("Schools which prefer student \""+student.getName()+"\": ");
+        schoolList.stream()
+                .filter(school -> schoolPref.get(school).indexOf(student) == 0)
+                .forEach(System.out::println);
+    }
 }

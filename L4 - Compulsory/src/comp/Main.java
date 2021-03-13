@@ -20,11 +20,21 @@ public class Main {
 
         Map<Student, List<School>> studentPref = new HashMap<>();
 
-        Preferences preferences = new Preferences(studentList, schoolSet);
-        preferences.createStdPrefMap();
-        preferences.printStdPrefMap();
-        preferences.createSchoolPrefMap();
-        preferences.printSchoolPrefMap();
+        SAP_Problem problem = new SAP_Problem(studentList, schoolSet);
+        problem.createStdPrefMap();
+        problem.printStdPrefMap();
+        problem.createSchoolPrefMap();
+        problem.printSchoolPrefMap();
+
+
+        problem.studentsFindAcceptSchools(problem.setToList());
+        problem.schoolsTopPriority(studentList.get(3));
+
+//        Faker faker = new Faker();
+//        String name = faker.name().fullName();
+//        System.out.println("funny: "+ name);
     }
 
 }
+
+
