@@ -1,4 +1,4 @@
-package optional;
+package optional.mainPackage;
 
 import java.util.*;
 import java.util.stream.IntStream;

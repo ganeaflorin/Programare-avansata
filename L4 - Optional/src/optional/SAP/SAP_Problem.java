@@ -1,4 +1,7 @@
-package optional;
+package optional.SAP;
+
+import optional.mainPackage.School;
+import optional.mainPackage.Student;
 
 import java.util.*;
 import java.util.stream.Collectors;

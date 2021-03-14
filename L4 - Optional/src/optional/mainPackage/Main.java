@@ -1,7 +1,8 @@
-package optional;
-
+package optional.mainPackage;
 
 import com.github.javafaker.Faker;
+import optional.SAP.SAP_Problem;
+import optional.SAP.SAP_Solution;
 
 import java.util.*;
 
@@ -33,7 +34,7 @@ public class Main {
         solution.createSolution();
         solution.printMatch();
 
-//        Faker fake = new Faker();
+        Faker fake = new Faker();
 //        String name = fake.name().firstName();
     }
 }
