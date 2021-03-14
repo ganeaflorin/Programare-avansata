@@ -1,12 +1,9 @@
 package comp;
 
-import java.util.Collections;
-import java.util.Comparator;
-import java.util.LinkedList;
-import java.util.List;
+import java.util.*;
 import java.util.stream.IntStream;
 
-public class Student {
+public class Student implements Comparator<Student> {
     private String name;
 
     public Student() {
@@ -25,13 +22,14 @@ public class Student {
     }
 
     public List stream() {
+        Random random = new Random();
         var students = IntStream.rangeClosed(0, 3)
                 .mapToObj(i -> new Student("S" + i))
                 .toArray(Student[]::new);
         List<Student> studentList = new LinkedList<>();
         for (Student student : students)
             studentList.add(student);
-        Collections.sort(studentList, Comparator.comparing(Student::getName));
+        Collections.sort(studentList, (a, b) -> compare(a, b));
         return studentList;
     }
 
@@ -45,5 +43,10 @@ public class Student {
         return "Student{" +
                 "name='" + name + '\'' +
                 '}';
+    }
+
+    @Override
+    public int compare(Student std1, Student std2) {
+        return std1.getName().compareTo(std2.getName());
     }
 }

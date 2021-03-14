@@ -1,4 +1,4 @@
-package comp;
+package optional;
 
 import java.util.*;
 import java.util.stream.IntStream;
@@ -33,8 +33,8 @@ public class School implements Comparable<School> {
 
     public Set stream() {
         Random random = new Random();
-        var schools = IntStream.rangeClosed(0, 2)
-                .mapToObj(i -> new School("H" + i, random.nextInt(5) % 3 + 1))
+        var schools = IntStream.rangeClosed(0, 4)
+                .mapToObj(i -> new School("H" + i, random.nextInt(5) % 5 + 1))
                 .toArray(School[]::new);
         Set<School> schoolSet = new TreeSet<>();
         for (School school : schools)

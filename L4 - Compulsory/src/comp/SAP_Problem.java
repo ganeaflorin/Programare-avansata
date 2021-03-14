@@ -16,6 +16,18 @@ public class SAP_Problem {
         this.students = students;
     }
 
+    public void printStudents() {
+        for (Student std : students) {
+            System.out.println(std.toString());
+        }
+    }
+
+    public void printSchools() {
+        for (School school : schools) {
+            System.out.println(school.toString());
+        }
+    }
+
     public void createSchoolPrefMap() {
         List<School> tempList = setToList();
         schoolPref.put(tempList.get(0), Arrays.asList(students.get(3), students.get(0), students.get(1), students.get(2)));
@@ -62,22 +74,5 @@ public class SAP_Problem {
         return list;
     }
 
-    public void studentsFindAcceptSchools(List<School> schoolList) {
-        List<Student> result = students.stream()
-                .filter(student -> studentPref.get(student).containsAll(schoolList))
-                .collect(Collectors.toList());
-        System.out.print("\nStudents who prefer H0, H1, H2: ");
-        for (Student std : result) {
-            System.out.print(std.getName() + " ");
-        }
-        System.out.println();
-    }
 
-    public void schoolsTopPriority(Student student) {
-        List<School> schoolList = setToList();
-        System.out.print("Schools which prefer student \""+student.getName()+"\": ");
-        schoolList.stream()
-                .filter(school -> schoolPref.get(school).indexOf(student) == 0)
-                .forEach(System.out::println);
-    }
 }

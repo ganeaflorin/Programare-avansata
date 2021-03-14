@@ -1,4 +1,7 @@
-package comp;
+package optional;
+
+
+import com.github.javafaker.Faker;
 
 import java.util.*;
 
@@ -23,9 +26,16 @@ public class Main {
         problem.printStdPrefMap();
         problem.createSchoolPrefMap();
         problem.printSchoolPrefMap();
+        problem.studentsFindAcceptSchools(problem.setToList());
+        problem.schoolsTopPriority(studentList.get(3));
 
+        SAP_Solution solution = new SAP_Solution(problem);
+        solution.createSolution();
+        solution.printMatch();
+
+//        Faker fake = new Faker();
+//        String name = fake.name().firstName();
     }
-
 }
 
 
