@@ -7,34 +7,25 @@ import java.util.*;
 import java.util.stream.Collectors;
 
 public class SAP_Problem implements Comparator<Student> {
-    private final Map<Student, List<School>> studentPref;
-    private final List<Student> students;
-    private final Set<School> schools;
-    private final Map<School, List<Student>> schoolPref;
-
     /**
      * Descriere problema. Fiind date:
      *
      * @param students o multime de studenti care doresc sa fie admisi la o scoala in functie de preferintele lor
      * @param schools  o multime de scoli care dorec sa admita elevi in functie de nota obtinuta la examen
-     *                 Vrem sa gasim o potrivire intre acestea, adica un set de perechi (elev, scoala) astfel incat
-     *                 fiecare elev sa fie admis la o scoala, iar capacitatile acestora sa fie respectate
+     * Vrem sa gasim o potrivire intre acestea, adica un set de perechi (elev, scoala) astfel incat
+     * fiecare elev sa fie admis la o scoala, iar capacitatile acestora sa fie respectate
      */
+
+    private final Map<Student, List<School>> studentPref;
+    private final List<Student> students;
+    private final Set<School> schools;
+    private final Map<School, List<Student>> schoolPref;
 
     public SAP_Problem(List<Student> students, Set<School> schools) {
         studentPref = new HashMap<>();
         schoolPref = new TreeMap<>();
         this.schools = schools;
         this.students = students;
-    }
-
-    public void sortStudents() {
-        students.sort((a, b) -> compare(a, b));
-    }
-
-    @Override
-    public int compare(Student std1, Student std2) {
-        return std1.getName().compareTo(std2.getName());
     }
 
     public Map<School, List<Student>> getSchoolPref() {
@@ -101,6 +92,15 @@ public class SAP_Problem implements Comparator<Student> {
                 System.out.print(school.getName() + " ");
             System.out.println();
         }
+    }
+
+    public void sortStudents() {
+        students.sort((a, b) -> compare(a, b));
+    }
+
+    @Override
+    public int compare(Student std1, Student std2) {
+        return std1.getName().compareTo(std2.getName());
     }
 
     public List setToList() {

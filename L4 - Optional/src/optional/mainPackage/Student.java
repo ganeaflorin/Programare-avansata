@@ -41,7 +41,6 @@ public class Student implements Comparable<Student> {
         List<Student> studentList = new LinkedList<>();
         for (Student student : students)
             studentList.add(student);
-//        Collections.sort(studentList, (a, b) -> compare(a, b));
         return studentList;
     }
 
@@ -61,7 +60,6 @@ public class Student implements Comparable<Student> {
                 '}';
     }
 
-
     public int compareTo(Student otherStd) {
         if (this.getExamScore() < otherStd.getExamScore())
             return 1;
@@ -69,7 +67,5 @@ public class Student implements Comparable<Student> {
             return -1;
         return 0;
     }
-
-
 }
 

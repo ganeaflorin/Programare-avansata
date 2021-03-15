@@ -13,19 +13,17 @@ public class SAP_Solution {
      * Parcurgem lista cu studenti
      * Pentru fiecare student parcurgem preferintele acestora
      * Cand gasim prima preferinta care are capacitate > 0,
-     * Adaugam in mapa matching perechea de student si scoala
+     * asignam preferinta atributului "assignedSchool" al studentului
      * Si trecem la urmatorul student
      */
     private List<School> schoolList;
     private List<Student> studentList;
-    private Map<Student, School> matching;
     private Map<Student, List<School>> studentPref;
 
     public SAP_Solution(SAP_Problem problem) {
         this.studentList = problem.getStudents();
         this.schoolList = problem.setToList();
         this.studentPref = problem.getStudentPref();
-        matching = new HashMap<>();
     }
 
     public void createSolution() {

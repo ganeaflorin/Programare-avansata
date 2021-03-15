@@ -51,24 +51,24 @@ public class Catalog implements Serializable {
         }
     }
 
-    public static Catalog load(Catalog catalog) {
-        String path = "C:\\\\Users\\\\andre\\\\OneDrive\\\\Desktop\\\\catalog.txt";
-        try {
-
-            FileInputStream fileIn = new FileInputStream(path);
-            ObjectInputStream objectIn = new ObjectInputStream(fileIn);
-
-            Catalog obj = (Catalog) objectIn.readObject();
-
-            System.out.println("The Object has been read from the file");
-            objectIn.close();
-            return obj;
-
-        } catch (Exception ex) {
-            ex.printStackTrace();
-            return null;
-
-        }
-    }
+//    public static Catalog load(Catalog catalog) {
+//        String path = "C:\\\\Users\\\\andre\\\\OneDrive\\\\Desktop\\\\catalog.txt";
+//        try {
+//
+//            FileInputStream fileIn = new FileInputStream(path);
+//            ObjectInputStream objectIn = new ObjectInputStream(fileIn);
+//
+//            Catalog obj = (Catalog) objectIn.readObject();
+//
+//            System.out.println("The Object has been read from the file");
+//            objectIn.close();
+//            return obj;
+//
+//        } catch (Exception ex) {
+//            ex.printStackTrace();
+//            return null;
+//
+//        }
+//    }
 }
 

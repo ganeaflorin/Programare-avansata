@@ -4,8 +4,8 @@ import java.util.*;
 import java.util.stream.IntStream;
 
 public class School implements Comparable<School> {
-    String name;
-    int capacity;
+    private String name;
+    private int capacity;
 
     public School() {
     }
