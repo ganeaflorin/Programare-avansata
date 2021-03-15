@@ -53,7 +53,6 @@ public class SAP_Problem implements Comparator<Student> {
         stdList.sort((a, b) -> a.compareTo(b));
         for (School school : tempList)
             schoolPref.put(school, stdList);
-//        sortStudents();
     }
 
     public List<Student> getStudents() {
