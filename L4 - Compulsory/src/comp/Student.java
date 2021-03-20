@@ -6,6 +6,8 @@ import java.util.stream.IntStream;
 public class Student implements Comparator<Student> {
     private String name;
 
+    public Student() {}
+
     public Student(String name) {
         this.name = name;
     }

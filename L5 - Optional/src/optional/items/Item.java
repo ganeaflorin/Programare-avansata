@@ -1,6 +1,5 @@
-package compulsory.items;
+package optional.items;
 
-import java.io.Serializable;
 import java.nio.file.Path;
 
 public abstract class Item {

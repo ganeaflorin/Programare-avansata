@@ -29,10 +29,10 @@ public class SAP_Problem {
     }
 
     public void createSchoolPrefMap() {
-        List<School> tempList = setToList();
-        schoolPref.put(tempList.get(0), Arrays.asList(students.get(3), students.get(0), students.get(1), students.get(2)));
-        schoolPref.put(tempList.get(1), Arrays.asList(students.get(0), students.get(2), students.get(1)));
-        schoolPref.put(tempList.get(2), Arrays.asList(students.get(0), students.get(1), students.get(3)));
+        List<School> schoolTempList = setToList();
+        schoolPref.put(schoolTempList.get(0), Arrays.asList(students.get(3), students.get(0), students.get(1), students.get(2)));
+        schoolPref.put(schoolTempList.get(1), Arrays.asList(students.get(0), students.get(2), students.get(1)));
+        schoolPref.put(schoolTempList.get(2), Arrays.asList(students.get(0), students.get(1), students.get(3)));
     }
 
     public List<Student> getStudents() {
@@ -49,11 +49,11 @@ public class SAP_Problem {
     }
 
     public void createStdPrefMap() {
-        List<School> tempList = setToList();
-        studentPref.put(students.get(0), Arrays.asList(tempList.get(0), tempList.get(1), tempList.get(2)));
-        studentPref.put(students.get(1), Arrays.asList(tempList.get(0), tempList.get(1), tempList.get(2)));
-        studentPref.put(students.get(2), Arrays.asList(tempList.get(0), tempList.get(1)));
-        studentPref.put(students.get(3), Arrays.asList(tempList.get(0), tempList.get(2)));
+        List<School> schoolTempList = setToList();
+        studentPref.put(students.get(0), Arrays.asList(schoolTempList.get(0), schoolTempList.get(1), schoolTempList.get(2)));
+        studentPref.put(students.get(1), Arrays.asList(schoolTempList.get(0), schoolTempList.get(1), schoolTempList.get(2)));
+        studentPref.put(students.get(2), Arrays.asList(schoolTempList.get(0), schoolTempList.get(1)));
+        studentPref.put(students.get(3), Arrays.asList(schoolTempList.get(0), schoolTempList.get(2)));
     }
 
     public void printStdPrefMap() {

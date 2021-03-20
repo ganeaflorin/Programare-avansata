@@ -1,4 +1,4 @@
-package compulsory.items;
+package optional.items;
 
 import java.io.Serializable;
 import java.nio.file.Path;
@@ -18,7 +18,8 @@ public class Book extends Item implements Serializable {
     @Override
     public String toString() {
         return "Book{" +
-                "authorName='" + authorName + '\'' +
+                "name='" + name + '\'' +
+                ", authorName='" + authorName + '\'' +
                 ", releaseYear=" + releaseYear +
                 '}';
     }

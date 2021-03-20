@@ -1,6 +1,6 @@
-package compulsory.items;
+package optional.items;
 
-import compulsory.YearException;
+import optional.exceptions.YearException;
 
 import java.io.Serializable;
 import java.nio.file.Path;
@@ -37,7 +37,8 @@ public class Song extends Item implements Serializable {
     @Override
     public String toString() {
         return "Song{" +
-                "singer='" + singer + '\'' +
+                "name='" + name + '\'' +
+                ", singer='" + singer + '\'' +
                 ", releaseYear=" + releaseYear +
                 '}';
     }

@@ -1,4 +1,4 @@
-package compulsory.items;
+package optional.items;
 
 import java.awt.*;
 import java.io.*;
@@ -24,21 +24,6 @@ public class Catalog implements Serializable {
         catalogItems.add(item);
     }
 
-    public void play(Item item) {
-        try {
-            File file = new File(String.valueOf(catalogItems.get(catalogItems.indexOf(item)).getPath()));
-            if (!Desktop.isDesktopSupported()) {
-                System.out.println("not supported");
-                return;
-            }
-            Desktop desktop = Desktop.getDesktop();
-            if (file.exists())
-                desktop.open(file);
-        } catch (Exception e) {
-            e.printStackTrace();
-        }
-    }
-
     public void setPath(String path) {
         this.path = path;
     }
@@ -47,19 +32,8 @@ public class Catalog implements Serializable {
         this.catalogName = catalogName;
     }
 
-    public void list() {
-        System.out.println("Nume catalog: " + this.catalogName);
-        for (Item item : catalogItems) {
-            System.out.println(item.toString());
-        }
-    }
-
-    public static void save(Catalog catalog)
-            throws IOException {
-        try (ObjectOutputStream oos = new ObjectOutputStream(
-                new FileOutputStream(catalog.getPath()))) {
-            oos.writeObject(catalog);
-        }
+    public List<Item> getCatalogItems() {
+        return catalogItems;
     }
 
     public Catalog load() {
@@ -77,6 +51,10 @@ public class Catalog implements Serializable {
             return null;
 
         }
+    }
+
+    public String getCatalogName() {
+        return catalogName;
     }
 }
 
