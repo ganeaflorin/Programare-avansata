@@ -13,10 +13,8 @@ public class LoadCommand extends GenericCommand {
 
     public Catalog load(String path) {
         try {
-
             FileInputStream fileIn = new FileInputStream(path);
             ObjectInputStream objectIn = new ObjectInputStream(fileIn);
-
             Catalog obj = (Catalog) objectIn.readObject();
             objectIn.close();
             return obj;

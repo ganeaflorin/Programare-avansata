@@ -1,10 +1,11 @@
 package optional.items;
 
+import java.io.Serializable;
 import java.nio.file.Path;
 
-public abstract class Item {
+public abstract class Item implements Serializable {
     protected String name;
-    protected Path path;
+    protected String path;
 
     public Item() {
     }
@@ -13,7 +14,7 @@ public abstract class Item {
         this.name = name;
     }
 
-    public void setPath(Path path) {
+    public void setPath(String path) {
         this.path = path;
     }
 
@@ -21,7 +22,7 @@ public abstract class Item {
         return name;
     }
 
-    public Path getPath() {
+    public String getPath() {
         return path;
     }
 }

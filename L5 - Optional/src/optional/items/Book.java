@@ -8,7 +8,7 @@ public class Book extends Item implements Serializable {
     private String authorName;
     private Year releaseYear;
 
-    public Book(String name, Path path, String authorName, Year releaseYear) {
+    public Book(String name, String path, String authorName, Year releaseYear) {
         this.name = name;
         this.path = path;
         this.authorName = authorName;
