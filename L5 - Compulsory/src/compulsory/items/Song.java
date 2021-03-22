@@ -1,20 +1,23 @@
 package compulsory.items;
 
-import compulsory.YearException;
+import compulsory.exceptions.YearException;
 
 import java.io.Serializable;
-import java.nio.file.Path;
 import java.time.Year;
 
 public class Song extends Item implements Serializable {
     private String singer;
     private Year releaseYear;
 
-    public Song(String name, String path, String singer, Year releaseYear) {
+    public Song(String name, String path, String singer, int releaseYear) {
         this.name = name;
         this.path = path;
         this.singer = singer;
-        this.releaseYear = releaseYear;
+        try {
+            setReleaseYear(releaseYear);
+        } catch (YearException e) {
+            e.printStackTrace();
+        }
     }
 
     public String getSinger() {

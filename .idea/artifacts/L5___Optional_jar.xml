@@ -1,0 +1,9 @@
+<component name="ArtifactManager">
+  <artifact type="jar" name="L5 - Optional:jar">
+    <output-path>$PROJECT_DIR$/out/artifacts/L5___Optional_jar</output-path>
+    <root id="archive" name="L5 - Optional.jar">
+      <element id="module-output" name="L5 - Optional" />
+      <element id="module-output" name="L5 - Compulsory" />
+    </root>
+  </artifact>
+</component>

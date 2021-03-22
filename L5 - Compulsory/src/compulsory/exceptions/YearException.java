@@ -1,4 +1,4 @@
-package compulsory;
+package compulsory.exceptions;
 
 public class YearException extends Exception {
     public YearException() {

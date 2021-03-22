@@ -1,13 +1,12 @@
-package compulsory;
+package compulsory.main;
 
+import compulsory.exceptions.YearException;
 import compulsory.items.Book;
 import compulsory.items.Catalog;
 import compulsory.items.Item;
 import compulsory.items.Song;
 
-import java.io.File;
 import java.io.IOException;
-import java.nio.file.Path;
 import java.time.Year;
 
 import static compulsory.items.Catalog.save;
@@ -18,7 +17,7 @@ public class Main {
         catalog.setPath("C:\\Users\\andre\\OneDrive\\Desktop\\catalog-compulsory.txt");
         String pathSong = "C:\\Users\\andre\\Downloads\\Frank Sinatra - That's Life.mp3";
         String pathBook = "C:\\Users\\andre\\OneDrive\\Desktop\\anna karenina.txt";
-        Song thatsLife = new Song("life", pathSong, "Frank Sinatra", Year.of(1966));
+        Song thatsLife = new Song("life", pathSong, "Frank Sinatra", 1966);
         Item annaKarenina = new Book("Anna Karenina", pathBook, "Lev Tolstoi", Year.of(1877));
         catalog.add(thatsLife);
         catalog.add(annaKarenina);
