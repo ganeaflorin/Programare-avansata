@@ -10,10 +10,10 @@ public class Catalog implements Serializable {
     private String path;
     private String catalogName;
 
-    public Catalog(String catalogName) {
+    public Catalog(String catalogName, String path) {
         this.catalogItems = new ArrayList<>();
         this.catalogName = catalogName;
-
+        this.path = path;
     }
 
     public String getPath() {

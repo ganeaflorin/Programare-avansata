@@ -19,8 +19,9 @@ public class LoadCommand extends GenericCommand {
             objectIn.close();
             return obj;
 
-        } catch (Exception ex) {
-            ex.printStackTrace();
+        } catch (Exception exp) {
+//            System.out.println("Please enter a valid path to a file.");
+            exp.printStackTrace();
             return null;
 
         }

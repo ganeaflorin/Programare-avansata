@@ -11,11 +11,13 @@ public class SaveCommand extends GenericCommand {
         super(catalog);
     }
 
-    public static void save(Catalog catalog)
-            throws IOException {
+    public static void save(Catalog catalog) throws IOException {
         try (ObjectOutputStream oos = new ObjectOutputStream(
                 new FileOutputStream(catalog.getPath()))) {
             oos.writeObject(catalog);
+        } catch (Exception exp) {
+            System.out.println("Please load a catalog first.");
         }
     }
 }
+

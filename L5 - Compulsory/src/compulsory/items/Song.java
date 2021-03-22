@@ -10,7 +10,7 @@ public class Song extends Item implements Serializable {
     private String singer;
     private Year releaseYear;
 
-    public Song(String name, Path path, String singer, Year releaseYear) {
+    public Song(String name, String path, String singer, Year releaseYear) {
         this.name = name;
         this.path = path;
         this.singer = singer;
@@ -37,6 +37,8 @@ public class Song extends Item implements Serializable {
     @Override
     public String toString() {
         return "Song{" +
+                "name='" + name + '\'' +
+                "path='" + path + '\'' +
                 "singer='" + singer + '\'' +
                 ", releaseYear=" + releaseYear +
                 '}';

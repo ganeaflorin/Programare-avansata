@@ -14,14 +14,15 @@ public class PlayCommand extends GenericCommand {
     }
 
     public void play(String name) {
-        List<Item> catalogItems = catalog.getCatalogItems();
+
         try {
+            List<Item> catalogItems = catalog.getCatalogItems();
             Item item = null;
-            for (Item itemIterator : catalog.getCatalogItems())
+            for (Item itemIterator : catalogItems)
                 if (itemIterator.getName() != null)
                     if (itemIterator.getName().equals(name))
                         item = itemIterator;
-            if (item == null) throw new ItemNameNotFoundException();
+//            if (item == null) throw new ItemNameNotFoundException();
             File file = new File(String.valueOf(catalogItems.get(catalogItems.indexOf(item)).getPath()));
             if (!Desktop.isDesktopSupported()) {
                 System.out.println("not supported");
@@ -30,8 +31,11 @@ public class PlayCommand extends GenericCommand {
             Desktop desktop = Desktop.getDesktop();
             if (file.exists())
                 desktop.open(file);
+        } catch (NullPointerException e) {
+            System.out.println("Please load a catalog first.");
         } catch (Exception e) {
-            e.printStackTrace();
+//            e.printStackTrace();
+            System.out.println("Enter a valid item name.");
         }
     }
 }
