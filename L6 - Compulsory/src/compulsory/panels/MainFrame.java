@@ -1,9 +1,11 @@
-package compulsory;
+package compulsory.panels;
+
+import compulsory.panels.ConfigPanel;
+import compulsory.panels.ControlPanel;
+import compulsory.panels.DrawingPanel;
 
 import javax.swing.*;
 import java.awt.*;
-
-import static javax.swing.SwingConstants.*;
 
 public class MainFrame extends JFrame {
     ConfigPanel configPanel;
@@ -21,9 +23,21 @@ public class MainFrame extends JFrame {
         controlPanel = new ControlPanel(this);
         canvas = new DrawingPanel(this, configPanel);
 
-        add(controlPanel, BorderLayout.NORTH);
+        add(controlPanel, BorderLayout.SOUTH);
         add(configPanel, BorderLayout.NORTH);
         add(canvas, BorderLayout.CENTER);
         pack();
+    }
+
+    public void resetCanvas() {
+        canvas.removeAll();
+    }
+
+    public ConfigPanel getConfigPanel() {
+        return configPanel;
+    }
+
+    public DrawingPanel getCanvas() {
+        return canvas;
     }
 }

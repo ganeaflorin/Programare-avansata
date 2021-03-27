@@ -1,5 +1,7 @@
 package compulsory.items;
 
+import compulsory.exceptions.InvalidPathException;
+
 import java.awt.*;
 import java.io.*;
 import java.util.ArrayList;
@@ -62,7 +64,7 @@ public class Catalog implements Serializable {
         }
     }
 
-    public Catalog load() {
+    public Catalog load() throws InvalidPathException {
         try {
 
             FileInputStream fileIn = new FileInputStream(this.path);
@@ -77,6 +79,7 @@ public class Catalog implements Serializable {
             return null;
 
         }
+
     }
 }
 

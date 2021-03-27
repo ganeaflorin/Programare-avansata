@@ -1,4 +1,6 @@
-package compulsory;
+package compulsory.panels;
+
+import compulsory.RegularPolygon;
 
 import javax.swing.*;
 import java.awt.*;
@@ -29,8 +31,7 @@ public class DrawingPanel extends JPanel {
     }
 
     private void init() {
-        setPreferredSize(new Dimension(W, H)); //don’t use setSize. Why?
-        setBorder(BorderFactory.createEtchedBorder()); //for fun
+        setPreferredSize(new Dimension(W, H));
         this.addMouseListener(new MouseAdapter() {
             @Override
             public void mousePressed(MouseEvent e) {
@@ -41,10 +42,21 @@ public class DrawingPanel extends JPanel {
     }
 
     private void drawShape(int x, int y) {
-        Random rand = new Random();
-        int radius = rand.nextInt(360);
+        int radius = Integer.parseInt(configPanel.getSizeField().getText());
         int sides = (Integer) configPanel.getSidesField().getValue();
-        Color color = Color.blue; //create a transparent random Color.
+
+        Color color;
+        String colorString = (String) configPanel.getColor().getSelectedItem();
+        if (colorString.equals("Black"))
+            color = Color.BLACK;
+        else {
+            Random rand = new Random();
+            int red = rand.nextInt(255);
+            int green = rand.nextInt(255);
+            int blue = rand.nextInt(255);
+            color = new Color(red, green, blue);
+
+        }
         graphics.setColor(color);
         graphics.fill(new RegularPolygon(x, y, radius, sides));
     }
