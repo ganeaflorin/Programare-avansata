@@ -2,6 +2,7 @@ package compulsory.panels;
 
 import javax.imageio.ImageIO;
 import javax.swing.*;
+import javax.swing.filechooser.FileNameExtensionFilter;
 import java.awt.*;
 import java.awt.event.ActionEvent;
 import java.awt.image.BufferedImage;
@@ -36,25 +37,33 @@ public class ControlPanel extends JPanel {
     }
 
     private void save(ActionEvent e) {
-        try {
-            ImageIO.write(frame.canvas.image, "PNG", new File("C:\\Users\\andre\\OneDrive\\Desktop\\test.png"));
-        } catch (IOException ex) {
-            System.err.println(ex);
+        JFileChooser fileChooser = new JFileChooser();
+        if (fileChooser.showOpenDialog(frame) == JFileChooser.APPROVE_OPTION) {
+            try {
+
+                ImageIO.write(frame.canvas.image, "PNG", new File(fileChooser.getSelectedFile().getPath()));
+            } catch (IOException ex) {
+                System.err.println(ex);
+            }
         }
     }
 
     private void load(ActionEvent e) {
-        try {
-            ImageIO.read(new File("C:\\Users\\andre\\OneDrive\\Desktop\\test.png"));
-        } catch (IOException ex) {
-            System.err.println(ex);
+        JFileChooser fileChooser = new JFileChooser();
+        FileNameExtensionFilter filter = new FileNameExtensionFilter("PNG", "png");
+        fileChooser.setFileFilter(filter);
+        if (fileChooser.showOpenDialog(frame) == JFileChooser.APPROVE_OPTION) {
+            try {
+                frame.getCanvas().setCanvas(ImageIO.read(fileChooser.getSelectedFile()));
+
+            } catch (IOException ex) {
+                System.err.println(ex);
+            }
         }
     }
 
     private void reset(ActionEvent e) {
-        frame.getCanvas().invalidate();
-        frame.getCanvas().validate();
-        frame.getCanvas().repaint();
+        frame.getCanvas().resetCanvas();
     }
 
     private void exit(ActionEvent e) {

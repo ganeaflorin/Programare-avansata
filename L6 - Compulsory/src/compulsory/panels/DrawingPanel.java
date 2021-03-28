@@ -69,6 +69,22 @@ public class DrawingPanel extends JPanel {
     protected void paintComponent(Graphics g) {
         g.drawImage(image, 0, 0, this);
     }
+
+    public void resetCanvas() {
+        image = new BufferedImage(W, H, BufferedImage.TYPE_INT_ARGB);
+        graphics = image.createGraphics();
+        graphics.setColor(Color.WHITE); //fill the image with white
+        graphics.fillRect(0, 0, W, H);
+        repaint();
+    }
+
+    public void setCanvas(BufferedImage image) {
+        this.image = image;
+        graphics = image.createGraphics();
+        graphics.setColor(Color.WHITE); //fill the image with white
+        repaint();
+
+    }
 }
 
 
