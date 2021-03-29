@@ -11,6 +11,7 @@ public class MainFrame extends JFrame {
     ConfigPanel configPanel;
     DrawingPanel canvas;
     ControlPanel controlPanel;
+    ShapesPanel shapesPanel;
 
     public MainFrame() {
         super("Laborator GUI!");
@@ -22,15 +23,13 @@ public class MainFrame extends JFrame {
         configPanel = new ConfigPanel(this);
         controlPanel = new ControlPanel(this);
         canvas = new DrawingPanel(this, configPanel);
+        shapesPanel = new ShapesPanel(this);
 
         add(controlPanel, BorderLayout.SOUTH);
         add(configPanel, BorderLayout.NORTH);
+        add(shapesPanel, BorderLayout.WEST);
         add(canvas, BorderLayout.CENTER);
         pack();
-    }
-
-    public void resetCanvas() {
-        canvas.removeAll();
     }
 
     public ConfigPanel getConfigPanel() {

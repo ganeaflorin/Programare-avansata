@@ -49,4 +49,7 @@ public class ConfigPanel extends JPanel {
 
     }
 
+    public void setSidesField(int sides) {
+        this.sidesField.setValue(sides);
+    }
 }

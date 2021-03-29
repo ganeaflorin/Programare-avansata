@@ -13,8 +13,8 @@ public class DrawingPanel extends JPanel {
     final MainFrame frame;
     final ConfigPanel configPanel;
     final static int W = 800, H = 600;
-    BufferedImage image; //the offscreen image
-    Graphics2D graphics; //the "tools" needed to draw in the image
+    BufferedImage image;
+    Graphics2D graphics;
 
     public DrawingPanel(MainFrame frame, ConfigPanel configPanel) {
         this.frame = frame;
