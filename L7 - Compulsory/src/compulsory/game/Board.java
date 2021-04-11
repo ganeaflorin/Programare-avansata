@@ -7,6 +7,7 @@ public class Board {
     private Token tokenGenerator;
     private List<Token> board;
     private int noTokens;
+    private boolean gameFinished = false;
 
     public Board(int noTokens) {
         this.noTokens = noTokens;
@@ -29,10 +30,22 @@ public class Board {
     }
 
     public boolean gameFinished() {
-        return board.size() == 0;
+        return gameFinished;
     }
 
-    public synchronized void removeToken(int index) {
-        board.remove(board.get(index));
+    public synchronized Token removeToken(int index) {
+        Token pickedToken = board.get(index - 1);
+        board.remove(pickedToken);
+        noTokens--;
+        return pickedToken;
+    }
+
+    public void handleGameOver() {
+        if (boardSize() == 0)
+            gameFinished = true;
+    }
+
+    public int boardSize() {
+        return board.size();
     }
 }

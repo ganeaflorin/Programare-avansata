@@ -37,8 +37,8 @@ public class ConfigPanel extends JPanel {
         //sides label
         JLabel sidesLabel = new JLabel("Number of sides:");
         sidesField = new JSpinner(new SpinnerNumberModel(3, 3, 100, 1));
-        sidesField.setValue(3); //default number of sides
-        add(sidesLabel); //JPanel uses FlowLayout by default
+        sidesField.setValue(3);
+        add(sidesLabel);
         add(sidesField);
 
         JLabel colorLabel = new JLabel("Color:");

@@ -1,4 +1,4 @@
-package compulsory;
+package compulsory.polygon;
 
 import java.awt.*;
 

@@ -1,4 +1,4 @@
-package compulsory;
+package compulsory.main;
 
 import compulsory.panels.MainFrame;
 

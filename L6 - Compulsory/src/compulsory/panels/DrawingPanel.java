@@ -1,6 +1,6 @@
 package compulsory.panels;
 
-import compulsory.RegularPolygon;
+import compulsory.polygon.RegularPolygon;
 
 import javax.swing.*;
 import java.awt.*;
@@ -26,7 +26,7 @@ public class DrawingPanel extends JPanel {
     private void createOffscreenImage() {
         image = new BufferedImage(W, H, BufferedImage.TYPE_INT_ARGB);
         graphics = image.createGraphics();
-        graphics.setColor(Color.WHITE); //fill the image with white
+        graphics.setColor(Color.WHITE);
         graphics.fillRect(0, 0, W, H);
     }
 
@@ -37,7 +37,7 @@ public class DrawingPanel extends JPanel {
             public void mousePressed(MouseEvent e) {
                 drawShape(e.getX(), e.getY());
                 repaint();
-            } //Can’t use lambdas, JavaFX does a better job in these cases
+            }
         });
     }
 
@@ -55,7 +55,6 @@ public class DrawingPanel extends JPanel {
             int green = rand.nextInt(255);
             int blue = rand.nextInt(255);
             color = new Color(red, green, blue);
-
         }
         graphics.setColor(color);
         graphics.fill(new RegularPolygon(x, y, radius, sides));
@@ -73,7 +72,7 @@ public class DrawingPanel extends JPanel {
     public void resetCanvas() {
         image = new BufferedImage(W, H, BufferedImage.TYPE_INT_ARGB);
         graphics = image.createGraphics();
-        graphics.setColor(Color.WHITE); //fill the image with white
+        graphics.setColor(Color.WHITE);
         graphics.fillRect(0, 0, W, H);
         repaint();
     }
@@ -81,7 +80,7 @@ public class DrawingPanel extends JPanel {
     public void setCanvas(BufferedImage image) {
         this.image = image;
         graphics = image.createGraphics();
-        graphics.setColor(Color.WHITE); //fill the image with white
+        graphics.setColor(Color.WHITE);
         repaint();
 
     }
