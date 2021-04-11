@@ -14,6 +14,8 @@ dependencies {
     testImplementation 'org.junit.jupiter:junit-jupiter-api:5.6.0'
     testRuntimeOnly 'org.junit.jupiter:junit-jupiter-engine'
     implementation 'com.github.javafaker:javafaker:1.0.2'
+    compile group: 'mysql', name: 'mysql-connector-java', version: '8.0.15'
+    runtime "mysql:mysql-connector-java:8.0.15"
 }
 
 test {
