@@ -6,8 +6,6 @@ import compulsory.Timekeeper;
 import java.util.ArrayList;
 import java.util.List;
 
-import static java.lang.Thread.sleep;
-
 public class Game {
     private List<PlayerThread> players = new ArrayList<>();
     private Board board;
@@ -20,7 +18,6 @@ public class Game {
         this.board = board;
         timeKeeper = new Timekeeper(seconds);
     }
-
 
     public void addPlayer(PlayerThread player) {
         players.add(player);
@@ -44,9 +41,11 @@ public class Game {
             System.out.println("\nTIME'S UP!!!!");
             for (PlayerThread thread : threadList)
                 thread.setRunning(false);
+            System.exit(0);
+        } else {
+            determineWinner(players);
+            printWinner();
         }
-        determineWinner(players);
-        printWinner();
     }
 
     public void determineWinner(List<PlayerThread> players) {

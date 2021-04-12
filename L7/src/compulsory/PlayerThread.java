@@ -12,7 +12,7 @@ public class PlayerThread implements Runnable {
     private String name;
     private Board board;
     private List<Token> playerTokens;
-    private static volatile int turn = 0;
+    private static volatile Integer turn = 0;
     private int id;
     private int noPlayers;
     private boolean isRandom = false;
@@ -36,7 +36,6 @@ public class PlayerThread implements Runnable {
             while (turn != id) {
                 //do nothing
             }
-
             takeToken();
         }
     }
@@ -53,7 +52,7 @@ public class PlayerThread implements Runnable {
         return turn;
     }
 
-    public synchronized void takeToken() {
+    public void takeToken() {
         Scanner scanner = new Scanner(System.in);
         Random rand = new Random();
         if (!board.gameFinished()) {

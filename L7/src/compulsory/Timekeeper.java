@@ -18,6 +18,8 @@ public class Timekeeper implements Runnable {
                 e.printStackTrace();
             }
             currentGameLength++;
+            if (currentGameLength % 5 == 0)
+                System.out.println("The game has started " + currentGameLength + " second(s) ago.");
         }
         gameOver = true;
     }

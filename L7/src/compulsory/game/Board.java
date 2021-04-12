@@ -33,7 +33,7 @@ public class Board {
         return gameFinished;
     }
 
-    public synchronized Token removeToken(int index) {
+    public Token removeToken(int index) {
         Token pickedToken = board.get(index - 1);
         board.remove(pickedToken);
         noTokens--;
