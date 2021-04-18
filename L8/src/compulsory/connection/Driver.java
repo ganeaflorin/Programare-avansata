@@ -1,4 +1,4 @@
-package compulsory;
+package compulsory.connection;
 
 import java.sql.Connection;
 import java.sql.DriverManager;

@@ -12,7 +12,7 @@ public class PlayerThread implements Runnable {
     private String name;
     private Board board;
     private List<Token> playerTokens;
-    private static volatile Integer turn = 0;
+    private static volatile int turn = 0;
     private int id;
     private int noPlayers;
     private boolean isRandom = false;
