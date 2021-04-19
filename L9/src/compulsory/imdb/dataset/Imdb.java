@@ -19,18 +19,13 @@ import java.util.List;
 public class Imdb {
     private final String path = "C:\\Users\\andre\\Downloads\\movies.csv";
     private List<Movie> movieList = new ArrayList<>();
-    private int noMovies;
-
-    public Imdb(int noMovies) {
-        this.noMovies = noMovies;
-    }
 
     public void fileParser() {
         String line = "";
         int count = 0;
         try {
             BufferedReader br = new BufferedReader(new FileReader(path));
-            while (count < noMovies && (line = br.readLine()) != null) {
+            while (count < 10 && (line = br.readLine()) != null) {
                 if (count > 0) {
                     Movie movie = csvToMovie(line);
                     movieList.add(movie);
