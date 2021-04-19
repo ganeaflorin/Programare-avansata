@@ -34,6 +34,7 @@ public class Imdb {
                 if (count > 0) {
                     Movie movie = csvToMovie(line);
                     movieList.add(movie);
+                    System.out.println(movie);
                 }
                 count++;
             }
@@ -60,7 +61,6 @@ public class Imdb {
         movie.setGenresList(csvGenres(values[5]));
         movie.setDirectorsList(csvDirectors(values[9]));
         movie.setActorsList(csvActors(values[12]));
-        System.out.println(movie);
 
         return movie;
     }
